@@ -34,7 +34,7 @@ downward.
 
 - Insertion of a Node in B-Tree happens only at Leaf Node.
 
-
+--------------------------------------------------------------------------------------------
 
 Searching Complexity on B Tree
 
@@ -48,7 +48,48 @@ Average case Space complexity:  Θ(n)
 
 Worst case Space complexity:  Θ(n)
 
+---------------------------------------------------------------------------------------------
 
+Inserting:
+
+	Insertions are done at the leaf node level. The following algorithm needs to be followed in order to insert an item into B Tree.
+
+	1 - Traverse the B Tree in order to find the appropriate leaf node at which the node can be inserted.
+	
+	2 - If the leaf node contain less than m-1 keys then insert the element in the increasing order.
+	
+	3 - Else, if the leaf node contains m-1 keys, then follow the following steps.
+		
+		- Insert the new element in the increasing order of elements.
+		
+		- Split the node into the two nodes at the median.
+		
+		- Push the median element upto its parent node.
+		
+		- If the parent node also contain m-1 number of keys, then split it too by following the same steps.
+
+
+Deletion:
+
+	Deletion is also performed at the leaf nodes. The node which is to be deleted can either be a leaf node or an internal node. Following algorithm needs to be followed in order to delete a node from a B tree.
+
+	1 - Locate the leaf node.
+	
+	2 - If there are more than m/2 keys in the leaf node then delete the desired key from the node.
+	
+	3 - If the leaf node doesn't contain m/2 keys then complete the keys by taking the element from right or left sibling.
+		
+		- If the left sibling contains more than m/2 elements then push its largest element up to its parent and move the intervening element down to the node 		where the key is deleted.
+
+		- If the right sibling contains more than m/2 elements then push its smallest element up to the parent and move intervening element down to the node 		where the key is deleted.
+
+	4 - If neither of the sibling contain more than m/2 elements then create a new leaf node by joining two leaf nodes and the intervening element of the parent 	node.
+
+	5 - If parent is left with less than m/2 nodes then, apply the above process on the parent too.
+
+	If the the node which is to be deleted is an internal node, then replace the node with its in-order successor or predecessor. Since, successor or predecessor will always be on the leaf node hence, the process will be similar as the node is being deleted from the leaf node.
+
+---------------------------------------------------------------------------------------------
 
 
 

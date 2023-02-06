@@ -1,0 +1,51 @@
+Anotações arvores avl
+
+Balance Factor (k) = height (left(k)) - height (right(k))
+
+Insertion in AVL tree is performed in the same way as it is performed in a binary search tree. However, it may lead to violation in the AVL tree property and therefore the tree may need balancing. The tree can be balanced by applying rotations.
+
+Deletion can also be performed in the same way as it is performed in a binary search tree. Deletion may also disturb the balance of the tree therefore, various types of rotations are used to rebalance the tree.
+
+------------------------------------------------------------------------------------------------------
+
+We perform rotation in AVL tree only in case if Balance Factor is other than -1, 0, and 1. There are basically four types of rotations which are as follows:
+
+1 - L L rotation: Inserted node is in the left subtree of left subtree of A
+
+2 - R R rotation : Inserted node is in the right subtree of right subtree of A
+
+3 - L R rotation : Inserted node is in the right subtree of left subtree of A
+
+4 - R L rotation : Inserted node is in the left subtree of right subtree of A
+
+5 - Where node A is the node whose balance Factor is other than -1, 0, 1.
+
+The first two rotations LL and RR are single rotations and the next two rotations LR and RL are double rotations. For a tree to be unbalanced, minimum height must be at least 2.
+
+------------------------------------------------------------------------------------------------------
+
+1. RR Rotation (Left rotation, anti-clockwise)
+
+	When BST becomes unbalanced, due to a node is inserted into the right subtree of the right subtree of A, then we perform RR rotation, RR rotation is an anticlockwise rotation, which is applied on the edge below a node having balance factor -2
+
+2. LL Rotation (Right rotation, clockwise)
+
+	When BST becomes unbalanced, due to a node is inserted into the left subtree of the left subtree of C, then we perform LL rotation, LL rotation is clockwise rotation, which is applied on the edge below a node having balance factor 2.
+
+************************** Imagens no wiki !
+
+3. LR Rotation (left rotation + right rotation)
+
+	LR rotation = RR rotation + LL rotation, i.e., first RR rotation is performed on subtree and then LL rotation is performed on full tree, by full tree we mean the first node from the path of inserted node whose balance factor is other than -1, 0, or 1.
+
+4. RL Rotation (right rotation + left rotation)
+	
+	RL rotation = LL rotation + RR rotation, i.e., first LL rotation is performed on subtree and then RR rotation is performed on full tree, by full tree we mean the first node from the path of inserted node whose balance factor is other than -1, 0, or 1.
+
+**************************
+
+
+
+
+
+

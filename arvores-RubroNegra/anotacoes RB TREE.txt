@@ -2,10 +2,41 @@ Anotações Árvore Rubro Negra
 
 Propriedades:
 
-- Each node is either red or black.
-- (The root is black.)
-- All NIL leaves are black.
-- A red node must not have red children.
-- All paths from a node to the leaves below contain the same number of black nodes.
+1 - Each node is either red or black.
+
+2 - (The root is black.)
+
+3 - All NIL leaves are black.
+
+4 - A red node must not have red children.
+
+5 - All paths from a node to the leaves below contain the same number of black nodes.
+
 - The longest path from the root to a leaf (not counting the root) is at most twice as long as the shortest path from the root to a leaf.
+
+- Black height is the number of black nodes from a given node to its leaves. The black NIL leaves are counted, the start node is not.
+
+
+
+Método fixRedBlackPropertiesAfterInsert():
+
+We initially color the new node red so that rule 5 is satisfied.
+
+However, if the parent node of the inserted node is also red, we have violated rule 4. We then have to repair the tree by recoloring and/or rotating it so that all rules are satisfied again. That is done in the fixRedBlackPropertiesAfterInsert() method, which is called in the last line of the insertNode() method.
+
+During the repair, we have to deal with five different cases:
+
+Case 1: New Node Is the Root
+
+Case 2: Parent node is red and the root
+	
+Case 3: Parent and uncle nodes are red
+	
+Case 4: Parent node is red, uncle node is black, inserted node is "inner grandchild"
+
+Case 5: Parent node is red, uncle node is black, inserted node is "outer grandchild"
+
+	
+
+
 
