@@ -1,95 +1,87 @@
+
 Anotações Árvores B
 
-Árvores B são arvores que os nós podem conter mais de 1 valor e mais de 2 filhos.
+	Árvores B são árvores que os nós podem conter mais de 1 valor e mais de 2 filhos.
 
-The need for B-tree arose with the rise in the need for lesser time in accessing the physical storage media like a hard disk. The secondary storage devices are slower with a larger capacity. There was a need for such types of data structures that minimize the disk accesses.
+	A necessidade de B-tree surgiu com o aumento da necessidade de menor tempo para acessar a mídia de armazenamento físico como um disco rígido. Os dispositivos de armazenamento secundário são mais lentos com uma capacidade maior. Tinha necessidade de tais tipos de estruturas de dados que minimizassem os tempos de acesso ao disco.
 
-B-tree can store many keys in a single node and can have multiple child nodes. This decreases the height significantly allowing faster disk accesses.
+	A árvore B pode armazenar muitas chaves em um único nó e pode ter vários nós filhos. Isso diminui significativamente a altura, permitindo acessos mais rápidos ao disco.
 
-B Tree Applications
+	Aplicações da Árvore B
 
-- large databases and file systems
-- to store blocks of data (secondary storage media)
-- multilevel indexing
-
-
-Properties of B-Tree: 
-
-- All leaves are at the same level.
-
-- B-Tree is defined by the term minimum degree ‘t‘. The value of ‘t‘ depends upon disk block size.
-
-- Every node except the root must contain at least t-1 keys. The root may contain a minimum of 1 key.
-
-- All nodes (including root) may contain at most (2*t – 1) keys.
-
-- Number of children of a node is equal to the number of keys in it + 1.
-
-- All keys of a node are sorted in increasing order. The child between two keys k1 and k2 contains all keys in the range from k1 and k2.
-
-- B-Tree grows and shrinks from the root which is unlike Binary Search Tree. Binary Search Trees grow downward and also shrink from 
-downward.
-
-- Like other balanced Binary Search Trees, the time complexity to search, insert and delete is O(log n).
-
-- Insertion of a Node in B-Tree happens only at Leaf Node.
-
---------------------------------------------------------------------------------------------
-
-Searching Complexity on B Tree
-
-Worst case Time complexity:  Θ(log n)
-
-Average case Time complexity:  Θ(log n)
-
-Best case Time complexity:  Θ(log n)
-
-Average case Space complexity:  Θ(n)
-
-Worst case Space complexity:  Θ(n)
-
----------------------------------------------------------------------------------------------
-
-Inserting:
-
-	Insertions are done at the leaf node level. The following algorithm needs to be followed in order to insert an item into B Tree.
-
-	1 - Traverse the B Tree in order to find the appropriate leaf node at which the node can be inserted.
-	
-	2 - If the leaf node contain less than m-1 keys then insert the element in the increasing order.
-	
-	3 - Else, if the leaf node contains m-1 keys, then follow the following steps.
-		
-		- Insert the new element in the increasing order of elements.
-		
-		- Split the node into the two nodes at the median.
-		
-		- Push the median element upto its parent node.
-		
-		- If the parent node also contain m-1 number of keys, then split it too by following the same steps.
+	- grandes bancos de dados e sistemas de arquivos
+	- para armazenar blocos de dados (mídia de armazenamento secundário)
+	- indexação multinível
 
 
-Deletion:
+Propriedades da Árvore B:
 
-	Deletion is also performed at the leaf nodes. The node which is to be deleted can either be a leaf node or an internal node. Following algorithm needs to be followed in order to delete a node from a B tree.
+	- Todas as folhas estão no mesmo nível.
 
-	1 - Locate the leaf node.
-	
-	2 - If there are more than m/2 keys in the leaf node then delete the desired key from the node.
-	
-	3 - If the leaf node doesn't contain m/2 keys then complete the keys by taking the element from right or left sibling.
-		
-		- If the left sibling contains more than m/2 elements then push its largest element up to its parent and move the intervening element down to the node 		where the key is deleted.
+	- B-Tree é definido pelo termo grau mínimo 't'. O valor de 't' depende do tamanho do bloco do disco.
 
-		- If the right sibling contains more than m/2 elements then push its smallest element up to the parent and move intervening element down to the node 		where the key is deleted.
+	- Cada nó, exceto a raiz, deve conter pelo menos t-1 chaves. A raiz pode conter no mínimo 1 chave.
 
-	4 - If neither of the sibling contain more than m/2 elements then create a new leaf node by joining two leaf nodes and the intervening element of the parent 	node.
+	- Todos os nós (incluindo root) podem conter no máximo (2*t – 1) chaves.
 
-	5 - If parent is left with less than m/2 nodes then, apply the above process on the parent too.
+	- O número de filhos de um nó é igual ao número de chaves nele + 1.
 
-	If the the node which is to be deleted is an internal node, then replace the node with its in-order successor or predecessor. Since, successor or predecessor will always be on the leaf node hence, the process will be similar as the node is being deleted from the leaf node.
+	- Todas as chaves de um nó são classificadas em ordem crescente. O filho entre duas chaves k1 e k2 contém todas as chaves no intervalo de k1 e k2.
 
----------------------------------------------------------------------------------------------
+	- A B-Tree cresce e diminui a partir da raiz, diferente da Árvore de Pesquisa Binária. Árvores de busca binária crescem para baixo e também encolhem de
+para baixo.
+
+	- Como outras Árvores Binárias de Pesquisa balanceadas, a complexidade de tempo para pesquisar, inserir e excluir é O(log n).
+
+	- A inserção de um nó na B-Tree ocorre apenas no nó folha.
+
+
+
+	Complexidade de busca na Árvore B Θ(log n)
+
+-------------------------------------------------- -------------------------------------------
+
+	Inserção:
+
+	As inserções são feitas no nível do nó folha. O seguinte algoritmo precisa ser seguido para inserir um item na B Tree.
+
+	1 - Percorrer a Árvore para encontrar o nó folha no qual o nó pode ser inserido.
+
+	2 - Se o nó folha contiver menos que m-1 chaves, insira o elemento em ordem crescente.
+
+	3 - Caso contrário, se o nó folha contiver chaves m-1, siga as etapas a seguir.
+
+		- Insira o novo elemento na ordem crescente dos elementos.
+
+		- Divida o nó em dois nós na mediana.
+
+		- Empurre o elemento mediano até seu nó pai.
+
+		- Se o nó pai também contiver m-1 número de chaves, divida-o também seguindo as mesmas etapas.
+
+
+	Deleção:
+
+	A exclusão também é realizada nos nós folha. O nó a ser excluído pode ser um nó folha ou um nó interno. O algoritmo a seguir precisa ser seguido para excluir um nó de uma árvore B.
+
+	1 - Localize o nó folha.
+
+	2 - Se houver mais de m/2 chaves no nó folha, exclua a chave desejada do nó.
+
+	3 - Se o nó folha não contiver m/2 chaves então complete as chaves tomando o elemento do irmão direito ou esquerdo.
+
+		- Se o irmão esquerdo contiver mais de m/2 elementos, empurre seu maior elemento até seu pai e mova o elemento intermediário para baixo, para o nó onde a chave foi excluída.
+
+		- Se o irmão direito contiver mais de m/2 elementos, empurre seu menor elemento para o pai e mova o elemento intermediário para baixo, para o nó onde a chave foi excluída.
+
+	4 - Se nenhum dos irmãos contiver mais de m/2 elementos, crie um novo nó folha unindo dois nós folha e o elemento intermediário do nó pai.
+
+	5 - Se o pai ficar com menos de m/2 nós, aplique o processo acima no pai também.
+
+	Se o nó que deve ser excluído for um nó interno, substitua o nó por seu sucessor ou predecessor na ordem. Como o sucessor ou predecessor sempre estará no nó folha, portanto, o processo será semelhante, pois o nó está sendo excluído do nó folha.
+
+
+--------------------------------------------------------------------
 
 
 

@@ -1,40 +1,96 @@
+
 Anotações Árvore Rubro Negra
 
 Propriedades:
 
-1 - Each node is either red or black.
+	1 - Cada nó é vermelho ou preto.
 
-2 - (The root is black.)
+	2 - (A raiz é preta.)
 
-3 - All NIL leaves are black.
+	3 - Todas as folhas NULL são pretas.
 
-4 - A red node must not have red children.
+	4 - Um nó vermelho não deve ter filhos vermelhos.
 
-5 - All paths from a node to the leaves below contain the same number of black nodes.
+	5 - Todos os caminhos de um nó até as folhas abaixo contêm o mesmo número de nós pretos.
 
-- The longest path from the root to a leaf (not counting the root) is at most twice as long as the shortest path from the root to a leaf.
+	- O caminho mais longo da raiz até uma folha (sem contar a raiz) é no máximo o dobro do caminho mais curto da raiz até uma folha.
 
-- Black height is the number of black nodes from a given node to its leaves. The black NIL leaves are counted, the start node is not.
+	- Altura preta é o número de nós pretos de um determinado nó até suas folhas. As folhas NULL pretas são contadas, o nó inicial não.
 
-
-
-Método fixRedBlackPropertiesAfterInsert():
-
-We initially color the new node red so that rule 5 is satisfied.
-
-However, if the parent node of the inserted node is also red, we have violated rule 4. We then have to repair the tree by recoloring and/or rotating it so that all rules are satisfied again. That is done in the fixRedBlackPropertiesAfterInsert() method, which is called in the last line of the insertNode() method.
-
-During the repair, we have to deal with five different cases:
-
-Case 1: New Node Is the Root
-
-Case 2: Parent node is red and the root
 	
-Case 3: Parent and uncle nodes are red
-	
-Case 4: Parent node is red, uncle node is black, inserted node is "inner grandchild"
+	Rotações:
 
-Case 5: Parent node is red, uncle node is black, inserted node is "outer grandchild"
+	
+	Rotação à esquerda:
+
+	Selecione o nó que será rotacionado à esquerda (node X).
+	
+	Selecione o filho direito de X (node Y).
+	
+	Faça Y o nó pai de X.
+	
+	Faça o filho esquerdo de Y o novo filho direito de X.
+	
+	Atualize as ligações de parentesco de X e Y para refletir as mudanças.
+
+	
+	public Node rotEsquerda(Node x) {
+    		Node y = x.right;
+    		x.right = y.left;
+    		y.left = x;
+    		y.color = x.color;
+    		x.color = RED;
+    		return y;
+	}
+	
+
+	Rotação à direita (right rotation):
+
+	Selecione o nó que será rotacionado à direita (node X).
+	
+	Selecione o filho esquerdo de X (node Y).
+	
+	Faça Y o nó pai de X.
+	
+	Faça o filho direito de Y o novo filho esquerdo de X.
+	
+	Atualize as ligações de parentesco de X e Y para refletir as mudanças.
+
+	
+	public Node rotDireita(Node x) {
+    		Node y = x.left;
+    		x.left = y.right;
+    		y.right = x;
+    		y.color = x.color;
+    		x.color = RED;
+    		return y;
+	}
+
+
+	Método fixRedBlackPropertiesAfterInsert():
+
+	Inicialmente, colorimos o novo nó de vermelho para que a regra 5 seja satisfeita.
+
+	No entanto, se o nó pai do nó inserido também for vermelho, violamos a regra 4. Temos então que reparar a árvore recolorindo e/ou girando-a para que todas as regras sejam satisfeitas novamente. Isso é feito no método fixRedBlackPropertiesAfterInsert(), que é chamado na última linha do método insertNode().
+
+	Durante o reparo, temos que lidar com cinco casos diferentes:
+
+	Caso 1: o novo nó é a raiz
+
+	Caso 2: o nó pai é vermelho e a raiz
+
+	Caso 3: os nós pai e tio são vermelhos
+
+	Caso 4: o nó pai é vermelho, o nó tio é preto, o nó inserido é "neto interno"
+
+	Caso 5: o nó pai é vermelho, o nó tio é preto, o nó inserido é "neto externo"
+
+	
+	A altura h de uma árvore rubro-negra de n chaves ou nós
+	internos é no máximo 2 log(n + 1).
+
+	
+
 
 	
 
