@@ -1,0 +1,13 @@
+A Árvore B é uma estrutura de dados de árvore de busca que mantém a ordem dos elementos na árvore para garantir que as operações de busca, inserção e remoção sejam realizadas em tempo O(log n), onde n é o número de nós na árvore.
+
+A diferença entre a Árvore B e outras árvores de busca, como a Árvore Binária de Busca, é que a Árvore B permite que cada nó tenha mais de dois filhos. Isso é chamado de grau do nó. Em geral, o grau de cada nó é definido por uma constante k, que é conhecido como o fator de preenchimento da árvore. O fator de preenchimento é o número máximo de elementos que um nó pode conter antes que seja necessário dividi-lo em dois nós filhos.
+
+A Árvore B é uma árvore balanceada, o que significa que a altura da árvore é mantida relativamente curta, independentemente do número de elementos na árvore. Isso é importante para garantir que as operações de busca, inserção e remoção sejam realizadas rapidamente.
+
+Quando um elemento é adicionado à Árvore B, ele é inserido no nó apropriado na árvore. Se o nó já estiver cheio, ele será dividido em dois nós filhos e o elemento mediano será promovido para o nó pai. Se o nó pai também estiver cheio, ele será dividido e o processo se repetirá até que todos os nós estejam dentro do limite do fator de preenchimento.
+
+A remoção de um elemento na Árvore B é semelhante ao processo de inserção. Se o nó for removido e deixar de ter o número mínimo de elementos, ele pode ser combinado com outro nó filho.
+
+Em geral, a Árvore B é uma estrutura de dados muito eficiente para armazenar e recuperar informações em ordem. É amplamente utilizada em bancos de dados, sistemas de arquivos e outras aplicações que requerem uma busca rápida e ordenada de elementos.
+
+
