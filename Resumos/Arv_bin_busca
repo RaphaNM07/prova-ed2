@@ -1,0 +1,19 @@
+A Árvore Binária de Busca (BST, Binary Search Tree) é uma estrutura de dados que consiste em nós ligados em forma de árvore. Cada nó possui, no máximo, dois filhos (esquerdo e direito), e uma chave associada a ele. As chaves dos nós filhos esquerdos são menores do que a chave de seu pai, enquanto as chaves dos nós filhos direitos são maiores. Dessa forma, a BST permite uma organização eficiente dos dados.
+
+A BST pode ser utilizada para realizar diversas operações, como inserção, busca, remoção e iteração, com complexidade média O(log n). Além disso, a BST também permite a manutenção de uma ordenação dos elementos, o que é útil em aplicações que exigem acesso rápido a elementos ordenados.
+
+A BST também pode ser implementada com diversas variações, como árvore AVL (Adelson-Velsky e Landis), que garante que a altura da árvore seja sempre balanceada, ou árvore Rubro-Negra, que garante que a árvore seja balanceada e permita inserções e remoções rápidas.
+
+Em resumo, a BST é uma estrutura de dados versátil e eficiente que pode ser utilizada em diversas aplicações, especialmente aquelas que exigem organização e acesso rápido a elementos ordenados.
+
+Os principais fundamentos da Árvore Binária de Busca (BST, Binary Search Tree) incluem:
+
+1 - Nós e Chaves: Cada nó na BST possui uma chave associada a ele, que é utilizada para determinar a posição do nó na árvore.
+
+2 - Ordem: As chaves dos nós filhos esquerdos são menores do que a chave de seu pai, enquanto as chaves dos nós filhos direitos são maiores.
+
+3 - Operações: A BST permite eficientemente realizar operações como inserção, busca, remoção e iteração.
+
+4 - Balanceamento: A BST pode ser implementada com variações que garantem o balanceamento da árvore, o que melhora a eficiência das operações.
+
+5 - Ordenação: A BST permite a manutenção de uma ordenação dos elementos, o que é útil em aplicações que exigem acesso rápido a elementos ordenados.
