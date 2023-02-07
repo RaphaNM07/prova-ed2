@@ -1,0 +1,19 @@
+Árvore AVL é uma estrutura de dados de árvore de busca binária balanceada, onde cada nó tem, no máximo, dois filhos. Ela foi desenvolvida por G.M. Adelson-Velsky e E.M. Landis em 1962 e é uma das árvores de busca binária mais conhecidas.
+
+A árvore AVL mantém o equilíbrio ao adicionar ou remover nós, garantindo que a altura da árvore seja mantida o mais curta possível. Isto permite que as operações de busca, inserção e remoção sejam realizadas em tempo O(log n), onde n é o número de nós na árvore.
+
+A altura da árvore é controlada pelo balanceamento de seus nós, baseado no conceito de fator de balanceamento. Cada nó tem um fator de balanceamento associado, que é a diferença entre as alturas de seus filhos. Se o fator de balanceamento de um nó for maior do que 1 ou menor do que -1, a árvore precisa ser rotacionada para manter seu equilíbrio.
+
+Existem duas rotações principais na Árvore AVL: rotação à direita (Rotação RR) e rotação à esquerda (Rotação LL).
+
+A rotação à direita (Rotação RR) é realizada quando o fator de balanceamento de um nó é negativo e seu filho esquerdo tem um fator de balanceamento positivo. Neste caso, o nó é rotacionado para a direita e seu filho esquerdo assume a posição do pai.
+
+A rotação à esquerda (Rotação LL) é realizada quando o fator de balanceamento de um nó é positivo e seu filho direito tem um fator de balanceamento negativo. Neste caso, o nó é rotacionado para a esquerda e seu filho direito assume a posição do pai.
+
+Além disso, existem duas rotações adicionais que combinam as rotações RR e LL para resolver desequilíbrios mais complexos: a rotação dupla à direita (Rotação LR) e a rotação dupla à esquerda (Rotação RL). A rotação dupla é realizada quando o fator de balanceamento de um nó é negativo e seu filho esquerdo tem um fator de balanceamento negativo, ou quando o fator de balanceamento de um nó é positivo e seu filho direito tem um fator de balanceamento positivo. Nestes casos, é realizada uma rotação à esquerda ou à direita primeiro, seguida de outra rotação à direita ou à esquerda.
+
+Essas rotações são realizadas automaticamente pela Árvore AVL ao adicionar ou remover nós, mantendo a altura da árvore o mais curta possível e garantindo a rapidez das operações de busca, inserção e remoção.
+
+A árvore AVL é amplamente utilizada em muitos aplicativos que requerem alta performance, como sistemas de banco de dados, motores de busca, reconhecimento de voz, entre outros. Ela é eficiente em comparação com outras árvores de busca binárias, pois mantém o equilíbrio em todas as operações, permitindo acesso rápido aos dados armazenados.
+
+Em resumo, a Árvore AVL é uma estrutura de dados eficiente e versátil que combina a busca binária com o balanceamento de árvores para garantir alta performance em operações de busca, inserção e remoção.
