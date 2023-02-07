@@ -1,0 +1,17 @@
+A Árvore Rubro-Negra é uma estrutura de dados baseada em árvore binária que possui algumas propriedades adicionais para garantir a estabilidade e a eficiência da árvore.
+
+Cada nó na Árvore Rubro-Negra pode ter uma cor: vermelho ou preto. As seguintes regras são aplicadas para manter a árvore balanceada:
+
+Raiz: a raiz da árvore é sempre preta.
+
+Folhas: as folhas (nós null) são sempre pretas.
+
+Vermelho-vermelho: um nó vermelho não pode ter um filho vermelho.
+
+Altura negra: a altura negra de todos os caminhos a partir de um nó até as folhas é igual.
+
+Essas regras garantem que a árvore tenha uma altura máxima de 2 * log2 (n), onde n é o número de nós na árvore. Isso significa que as operações de busca, inserção e remoção são realizadas em tempo O(log n).
+
+Quando um nó é adicionado ou removido da árvore, a cor dos nós pode ser modificada para manter as regras de cor da Árvore Rubro-Negra. Por exemplo, se um nó vermelho é adicionado e seus dois filhos são pretos, a cor do nó pode ser mudada para vermelho para garantir que a regra de "vermelho-vermelho" seja seguida. Além disso, rotações podem ser realizadas para equilibrar a árvore.
+
+A Árvore Rubro-Negra é amplamente utilizada porque é muito eficiente para operações de busca, inserção e remoção, e ainda garante uma altura balanceada da árvore. Isso significa que mesmo que a árvore contenha muitos nós, as operações ainda serão realizadas rapidamente. Além disso, a Árvore Rubro-Negra é fácil de implementar e é mais fácil de compreender do que outras estruturas de árvore balanceadas, como a Árvore AVL.
